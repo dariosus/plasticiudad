@@ -7,6 +7,12 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Auth;
 use Redirect;
 
+/*
+    if (!User::isAllowed([1])) {
+      return User::block();
+    }
+*/
+
 class User extends Authenticatable
 {
     use Notifiable;

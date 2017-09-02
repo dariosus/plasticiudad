@@ -62,11 +62,24 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        $userType = $data['userType'];
+        if ($userType == 2)  {
+            if (!User::isAllowed([2])) {
+              return User::block();
+            }
+        }
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
-            'userType' => 1,
+            'userType' => $userType,
         ]);
+    }
+
+    public function registerAdmin() {
+        if (!User::isAllowed([2])) {
+          return User::block();
+        }
+        return view('auth.register', ["admin" => true]);
     }
 }

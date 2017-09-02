@@ -31,5 +31,29 @@ class PlasticoinsController extends Controller
     	return redirect("dashboard")->with('status', 'Puntos cargados');
     }
 
+    public function verPlasticoinsGet(){
+    	return view("verPlasticoins");
+    }
+
+    public function verPlasticoinsPost(Request $request){
+    	//1 validar
+
+        $reglas = [
+            "email" => "required|email",
+        ];
+
+		$this->validate($request, $reglas);
+
+
+        //2 recuperar usuario
+        $user = User::where("email", $request["email"])->first();
+        $plasticoins = $user->plasticoins;
+
+        $data = compact("plasticoins");
+
+    	return view("verPlasticoins", $data);
+    }
+
+
 }
 

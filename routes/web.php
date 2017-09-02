@@ -44,6 +44,7 @@ Route::get("/plasticoins/cargar", "PlasticoinsController@cargarPlasticoinsGet");
 Route::post("/plasticoins/cargar", "PlasticoinsController@cargarPlasticoinsPost");
 
 
-Route::get("/plasticoins/ver", "PlasticoinsController@verPlasticoins");
+Route::get("/plasticoins/ver", "PlasticoinsController@verPlasticoinsGet");
+Route::post("/plasticoins/ver", "PlasticoinsController@verPlasticoinsPost");
 
 

@@ -6,27 +6,14 @@
                 <div class="col-lg-12">
                     <h1 class="page-header">Catálogo</h1>
                 </div>
-
-                <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                    <a class="thumbnail cargarProducto" href="#idModal" data-toggle="modal" data-productoId="1">
-                        <img class="img-responsive" src="http://placehold.it/400x300" alt="">
+                  
+                @foreach ($productos as $producto)
+                  <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                    <a class="thumbnail cargarProducto" href="#idModal" data-toggle="modal" data-productoId="{{$producto->id}}">
+                        <img width="400" src="{{$producto->getRutaFoto()}}" alt="">
                     </a>
                 </div>
-                <div class="col-lg-3 col-md-4 col-xs-6 thumb" >
-                    <a class="thumbnail cargarProducto" href="#idModal" data-toggle="modal" data-productoId="2">
-                        <img class="img-responsive" src="http://placehold.it/400x300" alt="">
-                    </a>
-                </div>
-                <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                    <a class="thumbnail cargarProducto" href="#idModal" data-toggle="modal" data-productoId="3">
-                        <img class="img-responsive" src="http://placehold.it/400x300" alt="">
-                    </a>
-                </div>
-                <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                    <a class="thumbnail cargarProducto" href="#idModal" data-toggle="modal" data-productoId="4">
-                        <img class="img-responsive" src="http://placehold.it/400x300" alt="">
-                    </a>
-                </div>        
+                @endforeach      
             </div>
 
             <div class="modal fade" id="idModal" role="dialog">

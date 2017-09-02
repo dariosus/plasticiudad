@@ -8,9 +8,13 @@
                 <div class="panel-heading">Register</div>
 
                 <div class="panel-body">
-                    <form class="form-horizontal" method="POST" action="{{ route('register') }}">
+                    @if (isset($admin))
+                        <form class="form-horizontal" method="POST" action="registeradmin">
+                    @else
+                        <form class="form-horizontal" method="POST" action="{{ route('register') }}">
+                    @endif
+                    
                         {{ csrf_field() }}
-
                         @if (isset($admin))
                             <input type="hidden" name="userType" value="2">
                         @else

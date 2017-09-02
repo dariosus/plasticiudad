@@ -14,8 +14,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get("/registeradmin", "Auth\RegisterController@registerAdmin");
-
 Auth::routes();
 
 Route::get("/dashboard", "DashboardController@home");
@@ -35,5 +33,8 @@ Route::get("categorias/modificar/{id}", "CategoriaController@modificarGet");
 Route::post("categorias/modificar/{id}","CategoriaController@modificarPost");
 Route::get("categorias/eliminar/{id}", "CategoriaController@eliminar");
 Route::get("categorias", "CategoriaController@listar");
+
+Route::get("/registeradmin", "MiRegisterController@registerAdmin");
+Route::post("/registeradmin", "MiRegisterController@registerAdminPost");
 
 

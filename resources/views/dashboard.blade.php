@@ -12,7 +12,13 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Dashboard</div>
                 <div class="panel-body">
-                    
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <a href="/registeradmin">
+                                Registrar administrador
+                            </a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>

@@ -22,6 +22,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/about', 'DashboardController@about')->name('about');
 Route::get('/convocatoria', 'DashboardController@convocatoria')->name('convocatoria');
+Route::get('/catalogo', 'DashboardController@catalogo');
 
 Route::get("/productos/crear", "ProductoController@crearGet");
 Route::post("productos/crear", "ProductoController@crearPost");

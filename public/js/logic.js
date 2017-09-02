@@ -41,7 +41,8 @@ $(document).ready(function () {
 // });
 
 $(".cargarProducto").on("click", function(event){
-	var id = $(this).attr("data-productoId");
+	$.ajax("").success()
+    var id = $(this).attr("data-productoId");
 	cargaProducto(id);
 
 	event.preventDefault();

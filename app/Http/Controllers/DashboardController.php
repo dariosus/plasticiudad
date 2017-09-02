@@ -7,19 +7,26 @@ use App\User;
 
 class DashboardController extends Controller
 {
-    public function home() {
-    	if (!User::isAllowed([2])) {
-    		return User::block();
-    	}
+    public function home()
+    {
+        if (!User::isAllowed([2])) {
+            return User::block();
+        }
 
-    	return view("dashboard");
+        return view("dashboard");
     }
 
-    public function about() {
+    public function about()
+    {
         return view("about");
     }
 
-    public function convocatoria() {
+    public function convocatoria()
+    {
         return view("convocatoria");
+    }
+
+    public function catalogo() {
+        return view("catalogo");
     }
 }

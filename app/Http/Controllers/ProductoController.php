@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Producto;
 use App\User;
 use App\Categoria;
+use Storage;
 
 class ProductoController extends Controller
 {
@@ -39,6 +40,11 @@ class ProductoController extends Controller
         $producto->descripcion = $request["descripcion"];
         $producto->plasticoins = $request["plasticoins"];
         $producto->categoria_id = $request["categoria_id"];
+
+        $foto = $request->file("foto");
+        
+        $nombreFoto = Storage::putFile("public/productos", $foto);
+        $producto->foto = $nombreFoto;
 
         $producto->save();
 

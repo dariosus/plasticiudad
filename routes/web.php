@@ -20,6 +20,8 @@ Route::get("/dashboard", "DashboardController@home");
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('/about', 'AboutController@about')->name('about');
+
 Route::get("/productos/crear", "ProductoController@crearGet");
 Route::post("productos/crear", "ProductoController@crearPost");
 Route::get("productos/modificar/{id}", "ProductoController@modificarGet");

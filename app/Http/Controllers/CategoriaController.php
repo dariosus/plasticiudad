@@ -8,17 +8,17 @@ use App\User;
 
 class CategoriaController extends Controller
 {
-    public function __construct() {
-		if (!User::isAllowed([2])) {
-	      return User::block();
-	    }
-	}
-
     public function crearGet() {
+        if (!User::isAllowed([2])) {
+          return User::block();
+        }
         return view("crearCategoria");
     }
 
     public function crearPost(Request $request) {
+        if (!User::isAllowed([2])) {
+          return User::block();
+        }
         //1 Validar
         $reglas = [
             "nombre" => "required|string|max:80",
@@ -39,6 +39,9 @@ class CategoriaController extends Controller
     }
 
     public function eliminar($id) {
+        if (!User::isAllowed([2])) {
+          return User::block();
+        }
         $categoria = Categoria::find($id);
         $categoria->delete();
 
@@ -46,6 +49,9 @@ class CategoriaController extends Controller
     }
 
     public function modificarGet($id) {
+        if (!User::isAllowed([2])) {
+          return User::block();
+        }
         $categoria = Categoria::find($id);
 
         $data = compact("categoria");
@@ -53,7 +59,10 @@ class CategoriaController extends Controller
         return view("editarCategoria", $data);
     }
 
-    public function modificarPost(Request $req, $id) {
+    public function modificarPost(Request $request, $id) {
+        if (!User::isAllowed([2])) {
+          return User::block();
+        }
         //1 Validar
         $reglas = [
             "nombre" => "required|string|max:80",
@@ -74,6 +83,9 @@ class CategoriaController extends Controller
     }
 
     public function listar() {
+        if (!User::isAllowed([2])) {
+          return User::block();
+        }
         $categorias = Categoria::paginate(50);
 
         $data = compact("categorias");

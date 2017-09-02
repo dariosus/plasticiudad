@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Producto;
+use App\User;
 
 class ProductoController extends Controller
 {
@@ -34,6 +35,6 @@ class ProductoController extends Controller
     }
 
     public function listar() {
-
+        
     }
 }

@@ -46,6 +46,20 @@
                             </a>
                         </li>
                     </ul>
+
+                    <h4>Gestion de Plasticoins</h4>
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <a href="/plasticoins/cargar">
+                                Cargar Plasticoins
+                            </a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="/plasticoins/ver">
+                                Ver Plasticoins del usuario
+                            </a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>

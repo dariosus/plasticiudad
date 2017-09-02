@@ -40,3 +40,10 @@ Route::get("/registeradmin", "MiRegisterController@registerAdmin");
 Route::post("/registeradmin", "MiRegisterController@registerAdminPost");
 
 
+Route::get("/plasticoins/cargar", "PlasticoinsController@cargarPlasticoinsGet");
+Route::post("/plasticoins/cargar", "PlasticoinsController@cargarPlasticoinsPost");
+
+
+Route::get("/plasticoins/ver", "PlasticoinsController@verPlasticoins");
+
+

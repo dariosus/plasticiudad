@@ -13,4 +13,8 @@ class Producto extends Model
     public function categoria() {
     	return $this->belongsTo('App\Categoria', "categoria_id");
     }
+
+    public function getRutaFoto() {
+    	return str_replace("public", "storage", $this->foto);
+    }
 }

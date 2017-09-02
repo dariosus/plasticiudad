@@ -43,8 +43,7 @@ class CategoriaController extends Controller
           return User::block();
         }
         $categoria = Categoria::find($id);
-
-        if (!empty($categoria->productos)) {
+        if ($categoria->productos->isNotEmpty()) {
             return redirect("/categorias")->with("status", "No se puede eliminar la categoría ya que tiene productos asociados");
         }
 

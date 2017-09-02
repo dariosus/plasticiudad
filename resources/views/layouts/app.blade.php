@@ -74,7 +74,29 @@
         @yield('content')
     </div>
 
+            <footer>
+                <div class="row">
+                    <div class="col-md-2">
+                    </div>
+                    <div class="col-md-8">
+                        <ul class="nav navbar-nav">
+                            <li>
+                                <a href="#">Términos y condiciones</a>
+                            </li>
+                            <li>
+                                <a href="#">Políticas de privacidad</a>
+                            </li>
+                            <li>
+                                <a href="#">Diseño sustentable</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-2">
+                    </div>
+                </footer>
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}"></script>
+    <script src="js/app.js"></script>
+    <script src="js/logic.js"></script>
+
 </body>
 </html>

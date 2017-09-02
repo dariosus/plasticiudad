@@ -108,4 +108,8 @@ class ProductoController extends Controller
 
         return view("listarProductos", $data);
     }
+
+    public function json($id) {
+        return Producto::findOrFail($id);
+    }
 }

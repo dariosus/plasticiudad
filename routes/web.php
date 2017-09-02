@@ -29,6 +29,8 @@ Route::post("productos/modificar/{id}","ProductoController@modificarPost");
 Route::get("productos/eliminar/{id}", "ProductoController@eliminar");
 Route::get("productos", "ProductoController@listar");
 
+Route::get("productos/json/{id}", "ProductoController@json");
+
 Route::get("/categorias/crear", "CategoriaController@crearGet");
 Route::post("categorias/crear", "CategoriaController@crearPost");
 Route::get("categorias/modificar/{id}", "CategoriaController@modificarGet");

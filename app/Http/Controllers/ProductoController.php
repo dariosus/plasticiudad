@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Producto;
 use App\User;
+use App\Categoria;
 
 class ProductoController extends Controller
 {
@@ -13,7 +14,9 @@ class ProductoController extends Controller
         if (!User::isAllowed([2])) {
           return User::block();
         }
-        return view("crearProducto");
+        $categorias = Categoria::all();
+        $data = compact("categorias");
+        return view("crearProducto", $data);
     }
 
     public function crearPost(Request $request) {
@@ -31,6 +34,7 @@ class ProductoController extends Controller
 
         //2 Crear
         $producto = new Producto;
+        $producto->foto = "";
         $producto->nombre = $request["nombre"];
         $producto->descripcion = $request["descripcion"];
         $producto->plasticoins = $request["plasticoins"];
@@ -49,7 +53,7 @@ class ProductoController extends Controller
         $producto = Producto::find($id);
         $producto->delete();
 
-        return redirect("dashboard")->with('status', "El producto $producto->nombre ha sido eliminado")
+        return redirect("dashboard")->with('status', "El producto $producto->nombre ha sido eliminado");
     }
 
     public function modificarGet($id) {

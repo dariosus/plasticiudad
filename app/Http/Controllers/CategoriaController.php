@@ -45,7 +45,7 @@ class CategoriaController extends Controller
         $categoria = Categoria::find($id);
         $categoria->delete();
 
-        return redirect("dashboard")->with('status', "La categoria $categoria->nombre ha sido eliminada")
+        return redirect("dashboard")->with('status', "La categoria $categoria->nombre ha sido eliminada");
     }
 
     public function modificarGet($id) {

@@ -5,9 +5,9 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Crear Producto</div>
+                <div class="panel-heading">Crear Categoría</div>
                 <div class="panel-body">
-                    <form class="form-horizontal" method="POST" action="/productos/crear">
+                    <form class="form-horizontal" method="POST" action="/categorias/crear">
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('nombre') ? ' has-error' : '' }}">
@@ -38,37 +38,10 @@
                             </div>
                         </div>
 
-                        <div class="form-group{{ $errors->has('plasticoins') ? ' has-error' : '' }}">
-                            <label for="plasticoins" class="col-md-4 control-label">PlastiCoins</label>
-
-                            <div class="col-md-6">
-                                <input id="plasticoins" type="text" class="form-control" name="plasticoins" value="{{ old('plasticoins') }}" required autofocus>
-
-                                @if ($errors->has('plasticoins'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('plasticoins') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="categoria_id" class="col-md-4 control-label">Categoria: </label>
-
-                            <div class="col-md-6">
-                                <select name="categoria_id" class="form-control">
-                                	@foreach($categorias as $categoria)
-										<option value="{{$categoria->id}}">{{$categoria->nombre}}</option>
-                                	@endforeach
-                                </select>
-                            </div>
-                        </div>
-                        
-
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">
-                                    Crear Producto
+                                    Crear Categoría
                                 </button>
                             </div>
                         </div>

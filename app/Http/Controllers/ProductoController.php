@@ -8,18 +8,18 @@ use App\User;
 
 class ProductoController extends Controller
 {
-	public function __construct() {
-		if (!User::isAllowed([2])) {
-	      return User::block();
-	    }
-	}
-
     
     public function crearGet() {
+        if (!User::isAllowed([2])) {
+          return User::block();
+        }
         return view("crearProducto");
     }
 
     public function crearPost(Request $request) {
+        if (!User::isAllowed([2])) {
+          return User::block();
+        }
         //1 Validar
         $reglas = [
             "nombre" => "required|string|max:80",
@@ -43,6 +43,9 @@ class ProductoController extends Controller
     }
 
     public function eliminar($id) {
+        if (!User::isAllowed([2])) {
+          return User::block();
+        }
         $producto = Producto::find($id);
         $producto->delete();
 
@@ -50,6 +53,9 @@ class ProductoController extends Controller
     }
 
     public function modificarGet($id) {
+        if (!User::isAllowed([2])) {
+          return User::block();
+        }
         $producto = Producto::find($id);
 
         $data = compact("producto");
@@ -58,6 +64,9 @@ class ProductoController extends Controller
     }
 
     public function modificarPost(Request $req, $id) {
+        if (!User::isAllowed([2])) {
+          return User::block();
+        }
         //1 Validar
         $reglas = [
             "nombre" => "required|string|max:80",
@@ -79,6 +88,10 @@ class ProductoController extends Controller
     }
 
     public function listar() {
+        if (!User::isAllowed([2])) {
+          return User::block();
+        }
+        
         $productos = Producto::paginate(50);
 
         $data = compact("productos");

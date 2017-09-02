@@ -8,6 +8,7 @@ class Categoria extends Model
 {
     public $table = "producto_categoria";
     public $guarded = [];
+    public $timestamps = false;
 
     public function productos() {
     	return $this->hasMany('App\Producto', "categoria_id");

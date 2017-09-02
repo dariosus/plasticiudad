@@ -14,4 +14,12 @@ class DashboardController extends Controller
 
     	return view("dashboard");
     }
+
+    public function about() {
+        return view("about");
+    }
+
+    public function convocatoria() {
+        return view("convocatoria");
+    }
 }

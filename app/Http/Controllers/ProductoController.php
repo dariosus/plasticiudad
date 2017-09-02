@@ -110,6 +110,10 @@ class ProductoController extends Controller
     }
 
     public function json($id) {
-        return Producto::findOrFail($id);
+        $producto = Producto::findOrFail($id);
+
+        $producto->foto = $producto->getRutaFoto();
+
+        return $producto;
     }
 }

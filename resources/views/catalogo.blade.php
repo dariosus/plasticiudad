@@ -10,7 +10,7 @@
                 @foreach ($productos as $producto)
                   <div class="col-lg-3 col-md-4 col-xs-6 thumb">
                     <a class="thumbnail cargarProducto" href="#idModal" data-toggle="modal" data-productoId="{{$producto->id}}">
-                        <img width="400" src="{{$producto->getRutaFoto()}}" alt="">
+                        <img class="cargarProducto" width="400" src="{{$producto->getRutaFoto()}}" alt="">
                     </a>
                 </div>
                 @endforeach      

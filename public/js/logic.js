@@ -41,7 +41,8 @@ $(document).ready(function () {
 // });
 
 $(".cargarProducto").on("click", function(event){
-    $.ajax({url: "/productos/json/1", success: function(result){
+    $.ajax({url: "/productos/json/5", success: function(result){
+        console.log(result);
         cargaProducto(result.data);
     }});
     var id = $(this).attr("data-productoId");

@@ -41,15 +41,16 @@ $(document).ready(function () {
 // });
 
 $(".cargarProducto").on("click", function(event){
-	$.ajax("").success()
+    $.ajax({url: "/productos/json/1", success: function(result){
+        cargaProducto(result.data);
+    }});
     var id = $(this).attr("data-productoId");
-	cargaProducto(id);
+
 
 	event.preventDefault();
 })
-function cargaProducto(id){
-	var modal = $("#idModal");
-	var producto = productos[id];
+function cargaProducto(producto){
+
 	 modal.find("#description").text(producto.descripcion);
 	 modal.find(".modal-title").text(producto.nombre);
 	 modal.find("#plasticoins").text(producto.plasticoins);
